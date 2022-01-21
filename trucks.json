@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Хонда",
+    "driver": {
+      "name": "Djon",
+      "age": 45
+    },
+    "state": "BASE"
+  },
+  {
+    "id": 2,
+    "name": "MAZ",
+    "driver": {
+      "name": "Alex",
+      "age": 30
+    },
+    "state": "ROUTE"
+  },
+  {
+    "id": 3,
+    "name": "Kamaz",
+    "driver": {
+      "name": "Arnold",
+      "age": 55
+    },
+    "state": "REPAIR"
+  }
+]
