@@ -17,9 +17,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Driver driver = new Driver("Djon", 45);
-        Driver driver2 = new Driver("Alex", 30);
-        Driver driver3 = new Driver("Arnold", 55);
+        Driver driver = new Driver(1, "Yryskeldi");
+        Driver driver2 = new Driver(2, "Tom");
+        Driver driver3 = new Driver(3, "Jerry");
+
+        Driver[] drivers = {driver,driver2, driver3};
+        String allDrivers = gson.toJson(drivers);
+        writeDrivers(allDrivers);
+        System.out.println(allDrivers);
 
         InfoTruck[] trucks = {
                 InfoTruck.showInfo(1,"Хонда", driver, State.BASE),
@@ -34,6 +39,17 @@ public class Main {
 
     private static void writeInfoTRuck(String obj) {
         Path write = Paths.get("./trucks.json");
+        try {
+            Files.writeString(write,obj, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+        }catch (IIOException e) {
+            e.getMessage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void writeDrivers(String obj) {
+        Path write = Paths.get("./drivers.json");
         try {
             Files.writeString(write,obj, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
         }catch (IIOException e) {

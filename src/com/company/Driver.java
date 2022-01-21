@@ -2,12 +2,23 @@ package com.company;
 
 public class Driver {
 
+    private int id;
     private String name;
-    private int age;
 
-    public Driver(String name, int age) {
+    public Driver(int id, String name) {
+        this.id = id;
         this.name = name;
-        this.age = age;
+    }
+
+    public Driver() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -16,13 +27,5 @@ public class Driver {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 }
