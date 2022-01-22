@@ -34,7 +34,7 @@ public class Main {
 
         String allTrucks = gson.toJson(trucks);
         writeInfoTRuck(allTrucks);
-        System.out.println();
+        System.out.println(allTrucks);
 
         /*-------------------------------------------2 этап-----------------------------------------------------*/
 
@@ -66,8 +66,8 @@ public class Main {
         System.out.println("Введите id грузовика ");
         int value = sc.nextInt();
         for (InfoTruck info : trucks) {
-            if (value == 1) {
-
+            if (value == info.getId()) {
+                System.out.println("Грузовик с " + info);
             }
         }
     }
