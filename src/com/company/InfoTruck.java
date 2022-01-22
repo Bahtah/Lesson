@@ -61,6 +61,13 @@ public class InfoTruck {
         System.out.println("Грузовик " + getName() + " Отправлен на ремонт");
     }
 
+    public void printTruck() {
+        System.out.println("--------------------Trucks---------------------"+'\n'+
+                "#|"+ " Bus " + "| ID " + "| Driver " + " | State "+ '\n' +
+                "-+-----------------+-----------+---------------"+'\n'
+                + getName() +   "|" + getId() + " " + getDriver() + " " + getState() + "\n");
+    }
+
     @Override
     public String toString() {
         return "id: " + id +

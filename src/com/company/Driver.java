@@ -29,9 +29,15 @@ public class Driver {
         this.name = name;
     }
 
+    public void printDrivers() {
+        System.out.println("--------------------Driver---------------------"+'\n'+
+                "#|"+ " Name " + "| ID " + '\n' +
+                "-+-----------------+-----------+---------------"+'\n'
+                + getName() +   "|" + getId() + "\n");
+    }
+
     @Override
     public String toString() {
-        return "id: " + id +
-                ", имя: " + name;
+        return " имя: " + name;
     }
 }

@@ -32,16 +32,26 @@ public class Main {
                 InfoTruck.showInfo(3,"Kamaz", driver3, State.REPAIR),
         };
 
+        /*----------------------------------------Вывод всех грузовиков-------------------------------*/
+        for (InfoTruck infoTruck : trucks) {
+            infoTruck.printTruck();
+        }
+
         String allTrucks = gson.toJson(trucks);
         writeInfoTRuck(allTrucks);
-        System.out.println(allTrucks);
 
         /*-------------------------------------------2 этап-----------------------------------------------------*/
 
         Driver[] drivers = {driver,driver2, driver3};
         String allDrivers = gson.toJson(drivers);
         writeDrivers(allDrivers);
-        System.out.println(allDrivers);
+        System.out.println("\n");
+
+        /*----------------------------------------Вывод всех водителей-------------------------------*/
+
+        for (Driver driver1 : drivers) {
+            driver1.printDrivers();
+        }
 
 
         /*-------------------------------------3 -й этап----------------------------------------------------------*/
