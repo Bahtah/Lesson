@@ -35,8 +35,28 @@ public class Main {
         String allTrucks = gson.toJson(trucks);
         writeInfoTRuck(allTrucks);
         System.out.println(allTrucks);
+
+
+        /*-------------------------------------3 -й этап----------------------------------------------------------*/
+
+        for (InfoTruck info : trucks) {
+            if (info.getState() == State.BASE) {
+                info.changeDriver(driver);
+                if (info.getState() == State.ROUTE) {
+                    System.out.println("Невозможно сменить водителя в пути!");
+                }
+            }
+            if (info.getState() == State.ROUTE) {
+                info.startDriving();
+            }
+            if (info.getState() == State.REPAIR) {
+                info.startRepair();
+            }
+        }
     }
 
+
+    /*------------------------------------------статик методы----------------------------------------------*/
     private static void writeInfoTRuck(String obj) {
         Path write = Paths.get("./trucks.json");
         try {

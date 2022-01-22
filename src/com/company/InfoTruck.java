@@ -48,4 +48,16 @@ public class InfoTruck {
 
         return info;
     }
+
+    public  void changeDriver(Driver driver){
+        System.out.println("Теперь грузовик " + getName() + " ведёт водитель " + driver);
+    }
+
+    public  void startDriving() {
+        System.out.println("Грузовик " + getName() + " отправлен на маршрут");
+    }
+
+    public  void startRepair() {
+        System.out.println("Грузовик " + getName() + " Отправлен на ремонт");
+    }
 }
