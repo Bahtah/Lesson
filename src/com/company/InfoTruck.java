@@ -39,6 +39,10 @@ public class InfoTruck {
         this.state = state;
     }
 
+    /*public InfoTruck getIdTRuck(int id) {
+        return
+    }*/
+
     public static InfoTruck showInfo(int id, String name, Driver driver, State state) {
         InfoTruck info = new InfoTruck();
         info.id = id;
@@ -59,5 +63,14 @@ public class InfoTruck {
 
     public  void startRepair() {
         System.out.println("Грузовик " + getName() + " Отправлен на ремонт");
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id +
+                ", name='" + name + '\'' +
+                ", driver=" + driver +
+                ", state=" + state +
+                '}';
     }
 }

@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Scanner;
 
 public class Main {
 
@@ -17,14 +18,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+        /*----------------------------Обьекты Водителей------------------------------------------------------*/
+
         Driver driver = new Driver(1, "Yryskeldi");
         Driver driver2 = new Driver(2, "Tom");
         Driver driver3 = new Driver(3, "Jerry");
 
-        Driver[] drivers = {driver,driver2, driver3};
-        String allDrivers = gson.toJson(drivers);
-        writeDrivers(allDrivers);
-        System.out.println(allDrivers);
+        /*----------------------------Массив грузовиков------------------------------------------------------*/
 
         InfoTruck[] trucks = {
                 InfoTruck.showInfo(1,"Хонда", driver, State.BASE),
@@ -34,7 +34,14 @@ public class Main {
 
         String allTrucks = gson.toJson(trucks);
         writeInfoTRuck(allTrucks);
-        System.out.println(allTrucks);
+        System.out.println();
+
+        /*-------------------------------------------2 этап-----------------------------------------------------*/
+
+        Driver[] drivers = {driver,driver2, driver3};
+        String allDrivers = gson.toJson(drivers);
+        writeDrivers(allDrivers);
+        System.out.println(allDrivers);
 
 
         /*-------------------------------------3 -й этап----------------------------------------------------------*/
@@ -53,10 +60,19 @@ public class Main {
                 info.startRepair();
             }
         }
+
+        /*------------------------------------------------4 этап-------------------------------------------*/
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите id грузовика ");
+        int value = sc.nextInt();
+        for (InfoTruck info : trucks) {
+            if (value == 1) {
+
+            }
+        }
     }
 
-
-    /*------------------------------------------статик методы----------------------------------------------*/
+    /*------------------------------------------статик методы запись в json---------------------------------*/
     private static void writeInfoTRuck(String obj) {
         Path write = Paths.get("./trucks.json");
         try {
