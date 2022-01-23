@@ -27,9 +27,9 @@ public class Main {
         /*----------------------------Массив грузовиков------------------------------------------------------*/
 
         InfoTruck[] trucks = {
-                InfoTruck.showInfo(1,"Хонда", driver, State.BASE),
-                InfoTruck.showInfo(2,"MAZ", driver2, State.ROUTE),
-                InfoTruck.showInfo(3,"Kamaz", driver3, State.REPAIR),
+                InfoTruck.showInfo(1,"Хонда", driver),
+                InfoTruck.showInfo(2,"MAZ", driver2),
+                InfoTruck.showInfo(3,"Kamaz", driver3),
         };
 
         /*----------------------------------------Вывод всех грузовиков-------------------------------*/
@@ -56,20 +56,7 @@ public class Main {
 
         /*-------------------------------------3 -й этап----------------------------------------------------------*/
 
-        for (InfoTruck info : trucks) {
-            if (info.getState() == State.BASE) {
-                info.changeDriver(driver);
-                if (info.getState() == State.ROUTE) {
-                    System.out.println("Невозможно сменить водителя в пути!");
-                }
-            }
-            if (info.getState() == State.ROUTE) {
-                info.startDriving();
-            }
-            if (info.getState() == State.REPAIR) {
-                info.startRepair();
-            }
-        }
+
 
         /*------------------------------------------------4 этап-------------------------------------------*/
         Scanner sc = new Scanner(System.in);

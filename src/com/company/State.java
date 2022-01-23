@@ -1,8 +1,5 @@
 package com.company;
 
-public enum State {
+public class State {
 
-    BASE,
-    ROUTE,
-    REPAIR;
 }

@@ -5,7 +5,6 @@ public class InfoTruck {
     private int id;
     private String name;
     private Driver driver;
-    private State state;
 
     public int getId() {
         return id;
@@ -31,20 +30,12 @@ public class InfoTruck {
         this.driver = driver;
     }
 
-    public State getState() {
-        return state;
-    }
 
-    public void setState(State state) {
-        this.state = state;
-    }
-
-    public static InfoTruck showInfo(int id, String name, Driver driver, State state) {
+    public static InfoTruck showInfo(int id, String name, Driver driver) {
         InfoTruck info = new InfoTruck();
         info.id = id;
         info.name = name;
         info.driver = driver;
-        info.state = state;
 
         return info;
     }
@@ -65,14 +56,13 @@ public class InfoTruck {
         System.out.println("--------------------Trucks---------------------"+'\n'+
                 "#|"+ " Bus " + "| ID " + "| Driver " + " | State "+ '\n' +
                 "-+-----------------+-----------+---------------"+'\n'
-                + getName() +   "|" + getId() + " " + getDriver() + " " + getState() + "\n");
+                + getName() +   "|" + getId() + " " + getDriver() + " " + "\n");
     }
 
     @Override
     public String toString() {
         return "id: " + id +
                 ", название: " + name +
-                ", водитель: " + driver +
-                ", состяние: " + state;
+                ", водитель: " + driver;
     }
 }
