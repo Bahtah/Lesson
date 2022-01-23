@@ -64,6 +64,10 @@ public class InfoTruck {
 
     @Override
     public String toString() {
-        return name;
+        return
+                "id:" + id +
+                ", name: " + name + '\'' +
+                ", водитель: " + driver +
+                ", состояние: " + state.getWhatCondition() + ":";
     }
 }
