@@ -30,7 +30,9 @@ public class Driver {
     }
 
     public void printDrivers() {
-        System.out.printf("%d, %s%n", getId(), getName());
+        System.out.println("#   Driver      |  Bus");
+        System.out.println("—+———-----------+———————+");
+        System.out.println(getId() + " |" + getName() + "\n");
     }
 
     @Override

@@ -14,6 +14,9 @@ public class InfoTruck {
         this.state = state;
     }
 
+    public InfoTruck() {
+    }
+
     public int getId() {
         return id;
     }
@@ -47,7 +50,10 @@ public class InfoTruck {
     }
 
     public void printTrucks() {
-        System.out.printf("%d, %s, %s, %s%n", getId(), getName(), getDriver(), getState().getWhatCondition());
+        System.out.println("#  | Bus       |  Driver  |  State");
+        System.out.println("—--+———--------+——-------—+———----");
+        System.out.println(getId() + " |\t" + getName() + "|\t\t\t\t\t" + getState().getWhatCondition());
+        System.out.println("----------------------------------\n");
     }
 
     public void changeDriver(Driver driver) {

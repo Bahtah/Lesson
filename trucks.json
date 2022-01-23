@@ -26,6 +26,14 @@
     },
     "state": "REPAIR"
   }
-]   "state": "REPAIR"
+]LT",
+    "driver": {
+      "infoTruck": {
+        "id": 0
+      },
+      "id": 21,
+      "name": "Erik"
+    },
+    "state": "REPAIR"
   }
 ]
