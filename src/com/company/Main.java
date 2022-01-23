@@ -44,6 +44,27 @@ public class Main {
         for (Driver driver : drivers) {
             driver.printDrivers();
         }
+
+        for (InfoTruck info : infoTrucks) {
+            if (info.getState() != State.ROUTE && info.getState() != State.REPAIR) {
+                info.changeDriver(new Driver(24, "Hardi"));
+                info.startDriving(info);
+            }else if(info.getState() != State.BASE && info.getState() != State.REPAIR) {
+                System.out.println("грузовик " + info.getName() + " в пути ");
+            }else if(info.getState() != State.BASE && info.getState() != State.ROUTE){
+                System.out.println("Грузовик " + info.getName() + " на ремонте и " + info.getDriver() + " свободен");
+            }
+        }
+
+        /*----------------------------------------4 этап----------------------------------------------------*/
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите id грузовика ");
+        int value = sc.nextInt();
+        for (InfoTruck info : infoTrucks) {
+            if (value == info.getId()) {
+                System.out.println("Грузовик с " + info);
+            }
+        }
     }
 
     /*------------------------------------------статик методы запись в json---------------------------------*/

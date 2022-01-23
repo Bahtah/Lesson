@@ -49,4 +49,21 @@ public class InfoTruck {
     public void printTrucks() {
         System.out.printf("%d, %s, %s, %s%n", getId(), getName(), getDriver(), getState().getWhatCondition());
     }
+
+    public void changeDriver(Driver driver) {
+        System.out.println("Теперь грузовик " + getName() + " ведет " + driver);
+    }
+
+    public void startDriving(InfoTruck infoTruck) {
+        System.out.println("Грузовик " + infoTruck + " Отправляется на маршрут");
+    }
+
+    public void startRepair(InfoTruck infoTruck) {
+        System.out.println("Грузовик " + infoTruck + " на ремонте");
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
