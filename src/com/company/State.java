@@ -1,8 +1,18 @@
 package com.company;
 
-public interface State {
+public enum State {
 
-    void base();
-    void route();
-    void repair();
+    BASE("на базе"),
+    ROUTE("в пути"),
+    REPAIR("на ремонте");
+
+    private String whatCondition;
+
+    State(String whatCondition) {
+        this.whatCondition = whatCondition;
+    }
+
+    public String getWhatCondition() {
+        return whatCondition;
+    }
 }

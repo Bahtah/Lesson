@@ -18,55 +18,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*----------------------------Обьекты Водителей------------------------------------------------------*/
+        InfoTruck infoTruck = new InfoTruck();
+        InfoTruck infoTruck2 = new InfoTruck();
+        InfoTruck infoTruck3 = new InfoTruck();
 
-        Driver driver = new Driver(1, "Yryskeldi");
-        Driver driver2 = new Driver(2, "Tom");
-        Driver driver3 = new Driver(3, "Jerry");
+        InfoTruck[] infoTrucks = {infoTruck, infoTruck2, infoTruck3};
 
-        /*----------------------------Массив грузовиков------------------------------------------------------*/
-
-        InfoTruck[] trucks = {
-                InfoTruck.showInfo(1,"Хонда", driver),
-                InfoTruck.showInfo(2,"MAZ", driver2),
-                InfoTruck.showInfo(3,"Kamaz", driver3),
-        };
-
-        /*----------------------------------------Вывод всех грузовиков-------------------------------*/
-        for (InfoTruck infoTruck : trucks) {
-            infoTruck.printTruck();
-        }
-
-        String allTrucks = gson.toJson(trucks);
-        writeInfoTRuck(allTrucks);
-
-        /*-------------------------------------------2 этап-----------------------------------------------------*/
-
-        Driver[] drivers = {driver,driver2, driver3};
-        String allDrivers = gson.toJson(drivers);
-        writeDrivers(allDrivers);
-        System.out.println("\n");
-
-        /*----------------------------------------Вывод всех водителей-------------------------------*/
-
-        for (Driver driver1 : drivers) {
-            driver1.printDrivers();
-        }
-
-
-        /*-------------------------------------3 -й этап----------------------------------------------------------*/
-
-
-
-        /*------------------------------------------------4 этап-------------------------------------------*/
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите id грузовика ");
-        int value = sc.nextInt();
-        for (InfoTruck info : trucks) {
-            if (value == info.getId()) {
-                System.out.println("Грузовик с " + info);
-            }
-        }
+        writeInfoTRuck(infoTrucks);
     }
 
     /*------------------------------------------статик методы запись в json---------------------------------*/
