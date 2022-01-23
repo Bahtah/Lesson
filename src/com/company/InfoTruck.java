@@ -1,6 +1,6 @@
 package com.company;
 
-public class InfoTruck {
+public class InfoTruck implements State{
 
     private int id;
     private String name;
@@ -64,5 +64,20 @@ public class InfoTruck {
         return "id: " + id +
                 ", название: " + name +
                 ", водитель: " + driver;
+    }
+
+    @Override
+    public void base() {
+
+    }
+
+    @Override
+    public void route() {
+
+    }
+
+    @Override
+    public void repair() {
+
     }
 }

@@ -1,5 +1,8 @@
 package com.company;
 
-public class State {
+public interface State {
 
+    void base();
+    void route();
+    void repair();
 }
