@@ -4,13 +4,11 @@ public class InfoTruck {
 
     private int id;
     private String name;
-    private Driver driver;
     private State state;
 
-    public InfoTruck(int id, String name, Driver driver, State state) {
+    public InfoTruck(int id, String name, State state) {
         this.id = id;
         this.name = name;
-        this.driver = driver;
         this.state = state;
     }
 
@@ -33,14 +31,6 @@ public class InfoTruck {
         this.name = name;
     }
 
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
-    }
-
     public State getState() {
         return state;
     }
@@ -56,8 +46,10 @@ public class InfoTruck {
         System.out.println("----------------------------------\n");
     }
 
-    public void changeDriver(Driver driver) {
-        System.out.println("Теперь грузовик " + getName() + " ведет " + driver);
+    public void changeDriver(InfoTruck infoTruck, Driver driver) {
+        if (infoTruck.getState() == State.BASE) {
+            System.out.println("Теперь грузовик " + getName() + " ведет " + driver);
+        }
     }
 
     public void startDriving(InfoTruck infoTruck) {
@@ -73,7 +65,6 @@ public class InfoTruck {
         return
                 "id:" + id +
                 ", name: " + name + '\'' +
-                ", водитель: " + driver +
                 ", состояние: " + state.getWhatCondition() + ":";
     }
 }

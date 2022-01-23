@@ -18,17 +18,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Driver driver1 = new Driver(45, "Don");
-        Driver driver2 = new Driver(25, "Sonya");
-        Driver driver3 = new Driver(21, "Erik");
+        Driver driver1 = new Driver(45, "Тилек");
+        Driver driver2 = new Driver(25, "Дайырбек");
+        Driver driver3 = new Driver(21, "Актош");
 
         Driver[] drivers = {driver1, driver2, driver3};
         String allDrivers = gson.toJson(drivers);
         writeDrivers(allDrivers);
 
-        InfoTruck infoTruck1 = new InfoTruck(1, "MAN", driver1, State.ROUTE);
-        InfoTruck infoTruck2 = new InfoTruck(2, "HOWO", driver2, State.BASE);
-        InfoTruck infoTruck3 = new InfoTruck(3, "RENAULT", driver3, State.REPAIR);
+        InfoTruck infoTruck1 = new InfoTruck(1, "MAN", State.ROUTE);
+        InfoTruck infoTruck2 = new InfoTruck(2, "HOWO", State.BASE);
+        InfoTruck infoTruck3 = new InfoTruck(3, "RENAULT", State.REPAIR);
 
 
         InfoTruck[] infoTrucks = {infoTruck1, infoTruck2, infoTruck3};
@@ -46,14 +46,7 @@ public class Main {
         }
 
         for (InfoTruck info : infoTrucks) {
-            if (info.getState() != State.ROUTE && info.getState() != State.REPAIR) {
-                info.changeDriver(new Driver(24, "Hardi"));
-                info.startDriving(info);
-            }else if(info.getState() != State.BASE && info.getState() != State.REPAIR) {
-                System.out.println("грузовик " + info.getName() + " в пути ");
-            }else if(info.getState() != State.BASE && info.getState() != State.ROUTE){
-                System.out.println("Грузовик " + info.getName() + " на ремонте и " + info.getDriver() + " свободен");
-            }
+           info.changeDriver(infoTruck1, driver3);
         }
 
         /*----------------------------------------4 этап----------------------------------------------------*/
