@@ -46,7 +46,14 @@ public class Main {
         }
 
         for (InfoTruck info : infoTrucks) {
-           info.changeDriver(infoTruck1, driver3);
+            if (info.getState() != State.ROUTE && info.getState() != State.REPAIR) {
+                info.changeDriver(infoTruck1, driver3);
+                info.startDriving(info);
+            }else if(info.getState() != State.BASE && info.getState() != State.REPAIR) {
+                System.out.println("грузовик " + info.getName() + " в пути ");
+            }else if(info.getState() != State.BASE && info.getState() != State.ROUTE){
+                info.startRepair(info);
+            }
         }
 
         /*----------------------------------------4 этап----------------------------------------------------*/

@@ -49,6 +49,8 @@ public class InfoTruck {
     public void changeDriver(InfoTruck infoTruck, Driver driver) {
         if (infoTruck.getState() == State.BASE) {
             System.out.println("Теперь грузовик " + getName() + " ведет " + driver);
+            startDriving(infoTruck);
+            infoTruck.getState().setWhatCondition("в пути");
         }
     }
 
@@ -57,7 +59,7 @@ public class InfoTruck {
     }
 
     public void startRepair(InfoTruck infoTruck) {
-        System.out.println("Грузовик " + infoTruck + " на ремонте");
+        System.out.println("Грузовик " + infoTruck);
     }
 
     @Override

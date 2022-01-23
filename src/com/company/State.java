@@ -15,4 +15,8 @@ public enum State {
     public String getWhatCondition() {
         return whatCondition;
     }
+
+    public void setWhatCondition(String whatCondition) {
+        this.whatCondition = whatCondition;
+    }
 }
