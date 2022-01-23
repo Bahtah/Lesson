@@ -7,6 +7,13 @@ public class InfoTruck {
     private Driver driver;
     private State state;
 
+    public InfoTruck(int id, String name, Driver driver, State state) {
+        this.id = id;
+        this.name = name;
+        this.driver = driver;
+        this.state = state;
+    }
+
     public int getId() {
         return id;
     }
@@ -37,5 +44,9 @@ public class InfoTruck {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public void printTrucks() {
+        System.out.printf("%d, %s, %s, %s%n", getId(), getName(), getDriver(), getState().getWhatCondition());
     }
 }

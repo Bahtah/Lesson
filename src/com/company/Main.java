@@ -18,13 +18,32 @@ public class Main {
 
     public static void main(String[] args) {
 
-        InfoTruck infoTruck = new InfoTruck();
-        InfoTruck infoTruck2 = new InfoTruck();
-        InfoTruck infoTruck3 = new InfoTruck();
+        Driver driver1 = new Driver(45, "Don");
+        Driver driver2 = new Driver(25, "Sonya");
+        Driver driver3 = new Driver(21, "Erik");
 
-        InfoTruck[] infoTrucks = {infoTruck, infoTruck2, infoTruck3};
+        Driver[] drivers = {driver1, driver2, driver3};
+        String allDrivers = gson.toJson(drivers);
+        writeDrivers(allDrivers);
 
-        writeInfoTRuck(infoTrucks);
+        InfoTruck infoTruck1 = new InfoTruck(1, "MAN", driver1, State.ROUTE);
+        InfoTruck infoTruck2 = new InfoTruck(2, "HOWO", driver2, State.BASE);
+        InfoTruck infoTruck3 = new InfoTruck(3, "RENAULT", driver3, State.REPAIR);
+
+
+        InfoTruck[] infoTrucks = {infoTruck1, infoTruck2, infoTruck3};
+
+        String allTrucks = gson.toJson(infoTrucks);
+        writeInfoTRuck(allTrucks);
+
+        /*------------------------------------------вывод всех грузовиков ---------------------------------*/
+        for (InfoTruck info : infoTrucks) {
+            info.printTrucks();
+        }
+        /*------------------------------------------вывод всех грузовиков ---------------------------------*/
+        for (Driver driver : drivers) {
+            driver.printDrivers();
+        }
     }
 
     /*------------------------------------------статик методы запись в json---------------------------------*/

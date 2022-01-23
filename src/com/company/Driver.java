@@ -30,14 +30,11 @@ public class Driver {
     }
 
     public void printDrivers() {
-        System.out.println("--------------------Driver---------------------"+'\n'+
-                "#|"+ " Name " + "| ID " + '\n' +
-                "-+-----------------+-----------+---------------"+'\n'
-                + getName() +   "|" + getId() + "\n");
+        System.out.printf("%d, %s%n", getId(), getName());
     }
 
     @Override
     public String toString() {
-        return " имя: " + name;
+        return " водитель: " + name;
     }
 }
