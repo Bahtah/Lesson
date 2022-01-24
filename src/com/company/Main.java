@@ -45,6 +45,16 @@ public class Main {
             driver.printDrivers();
         }
 
+        /*----------------------------------------4 этап----------------------------------------------------*/
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите id грузовика ");
+        int value = sc.nextInt();
+        for (InfoTruck info : infoTrucks) {
+            if (value == info.getId()) {
+                System.out.println("Грузовик с " + info);
+            }
+        }
+        System.out.println("----------------------------------------------------------------------------------");
         for (InfoTruck info : infoTrucks) {
             if (info.getState() != State.ROUTE && info.getState() != State.REPAIR) {
                 info.changeDriver(infoTruck1, driver3);
@@ -53,16 +63,6 @@ public class Main {
                 System.out.println("грузовик " + info.getName() + " в пути ");
             }else if(info.getState() != State.BASE && info.getState() != State.ROUTE){
                 info.startRepair(info);
-            }
-        }
-
-        /*----------------------------------------4 этап----------------------------------------------------*/
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите id грузовика ");
-        int value = sc.nextInt();
-        for (InfoTruck info : infoTrucks) {
-            if (value == info.getId()) {
-                System.out.println("Грузовик с " + info);
             }
         }
     }
