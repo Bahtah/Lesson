@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -55,18 +57,13 @@ public class Main {
             }
         }
         System.out.println("----------------------------------------------------------------------------------");
-        for (InfoTruck info : infoTrucks) {
-            if (info.getState() != State.ROUTE && info.getState() != State.REPAIR) {
-                info.changeDriver(infoTruck1, driver3);
-                info.startDriving(info);
-            }else if(info.getState() != State.BASE && info.getState() != State.REPAIR) {
-                System.out.println("грузовик " + info.getName() + " в пути ");
-            }else if(info.getState() != State.BASE && info.getState() != State.ROUTE){
-                info.startRepair(info);
-            }
-        }
-    }
 
+        infoTruck1.changeDriver(infoTruck3, driver2);
+
+        infoTruck1.startDriving(infoTruck3);
+
+        //infoTruck1.startRepair(infoTruck2);
+    }
     /*------------------------------------------статик методы запись в json---------------------------------*/
     private static void writeInfoTRuck(String obj) {
         Path write = Paths.get("./trucks.json");

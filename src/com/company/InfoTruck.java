@@ -1,10 +1,13 @@
 package com.company;
 
+import java.util.Random;
+
 public class InfoTruck {
 
     private int id;
     private String name;
     private State state;
+    private Driver driver;
 
     public InfoTruck(int id, String name, State state) {
         this.id = id;
@@ -39,6 +42,14 @@ public class InfoTruck {
         this.state = state;
     }
 
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
     public void printTrucks() {
         System.out.println("#  | Bus       |  Driver  |  State");
         System.out.println("—--+———--------+——-------—+———----");
@@ -48,14 +59,23 @@ public class InfoTruck {
 
     public void changeDriver(InfoTruck infoTruck, Driver driver) {
         if (infoTruck.getState() == State.BASE) {
-            System.out.println("Теперь грузовик " + getName() + " ведет " + driver);
-            startDriving(infoTruck);
-            infoTruck.getState().setWhatCondition("в пути");
+           infoTruck.setDriver(driver);
+        }else if(infoTruck.getState() == State.ROUTE) {
+            System.out.println("Водитель " + driver + " " + State.ROUTE.getWhatCondition());
+        }else {
+            System.out.println("Можно менять водителя");
         }
     }
 
     public void startDriving(InfoTruck infoTruck) {
-        System.out.println("Грузовик " + infoTruck + " Отправляется на маршрут");
+        if (infoTruck.getState() == State.BASE) {
+            if (infoTruck.getName() != null) {
+                infoTruck.setState(State.ROUTE);
+                System.out.println("водитель успешно находится в дороге");
+            }else {
+                System.out.println("Нет свободного водителя");
+            }
+        }
     }
 
     public void startRepair(InfoTruck infoTruck) {
